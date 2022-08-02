@@ -1,7 +1,6 @@
 #include "tools.hpp"
 
-int main() 
-{
-    Greet();
-    return 0;
+int main() {
+  Greet();
+  return 0;
 }
