@@ -2,3 +2,5 @@
 .vscode
 struct_traverse/magic_get
 sfml/hello_sfml/build
+json_parser/json
+json_parser/build
