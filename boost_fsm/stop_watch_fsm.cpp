@@ -20,14 +20,14 @@ struct EvStartStop : sc::event<EvStartStop> {};
 struct EvReset : sc::event<EvReset> {};
 
 struct Active;
+struct Running;
+struct Stopped;
 
 struct StopWatch : sc::state_machine<StopWatch, Active> {
     double ElapsedTime() const{
         return state_cast<const IElapsedTime &>().ElapsedTime();
     }
 };
-
-struct Stopped;
 
 struct Active : sc::simple_state<Active, StopWatch, Stopped> {
 public:
