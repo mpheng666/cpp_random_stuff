@@ -9,6 +9,8 @@
 /home/mpheng/cpp_random_stuff/boost_fsm/boost_statechart/src/hello_statechart.cpp
 boost/statechart/custom_reaction.hpp
 -
+boost/statechart/deferral.hpp
+-
 boost/statechart/event.hpp
 -
 boost/statechart/simple_state.hpp

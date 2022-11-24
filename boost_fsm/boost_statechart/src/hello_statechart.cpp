@@ -1,4 +1,5 @@
 #include <boost/statechart/custom_reaction.hpp>
+#include <boost/statechart/deferral.hpp>
 #include <boost/statechart/event.hpp>
 #include <boost/statechart/simple_state.hpp>
 #include <boost/statechart/state_machine.hpp>
@@ -8,50 +9,43 @@
 namespace sc = boost::statechart;
 using namespace std;
 namespace mpl = boost::mpl;
+struct firstState;
+struct secondState;
 
-struct firstState; // The Meta State
-
-// Inner States of firstState
-struct firstState_Inner_1;
-struct firstState_Inner_2;
-struct firstState_Inner_3;
-
-// Inner State Movement Events
-struct event_Inner1_Inner2 : sc::event<event_Inner1_Inner2> {};
-struct event_Inner2_Inner3 : sc::event<event_Inner2_Inner3> {};
-struct event_Inner3_Inner1 : sc::event<event_Inner3_Inner1> {};
-
-// Defining the State Machine
-struct statemachine : sc::state_machine<statemachine, firstState> {};
-
-// Defining the Meta State
-struct firstState
-    : sc::simple_state<firstState, statemachine, firstState_Inner_1> {};
-
-// The 3 Inner States of the Meta State
-struct firstState_Inner_1 : sc::simple_state<firstState_Inner_1, firstState> {
-    firstState_Inner_1() { cout << "In State => firstState_Inner_1" << endl; }
-    typedef sc::transition<event_Inner1_Inner2, firstState_Inner_2> reactions;
+struct statemachine : sc::state_machine<statemachine, firstState> {
+    int stateVariable;
+    statemachine() : stateVariable(100) {
+        cout << "StateMachine State Variable Constructor Value = "
+             << stateVariable << endl;
+    }
 };
 
-struct firstState_Inner_2 : sc::simple_state<firstState_Inner_2, firstState> {
-    firstState_Inner_2() { cout << "In State => firstState_Inner_2" << endl; }
-    typedef sc::transition<event_Inner2_Inner3, firstState_Inner_3> reactions;
+struct event_MoveToSecondState : sc::event<event_MoveToSecondState> {};
+struct event_CheckSMVariable : sc::event<event_CheckSMVariable> {};
+
+struct firstState : sc::simple_state<firstState, statemachine> {
+    typedef sc::custom_reaction<event_MoveToSecondState> reactions;
+    sc::result react(const event_MoveToSecondState &event) {
+        context<statemachine>().stateVariable = 200;
+        return transit<secondState>();
+    }
+};
+struct secondState : sc::simple_state<secondState, statemachine> {
+    typedef sc::custom_reaction<event_CheckSMVariable> reactions;
+    sc::result react(const event_CheckSMVariable &event) {
+        cout << "Inside event => event_CheckSMVariable | StateMachine State "
+                "Variable Value = "
+             << context<statemachine>().stateVariable << endl;
+        return discard_event();
+    }
 };
 
-struct firstState_Inner_3 : sc::simple_state<firstState_Inner_3, firstState> {
-    firstState_Inner_3() { cout << "In State => firstState_Inner_3" << endl; }
-    typedef sc::transition<event_Inner3_Inner1, firstState_Inner_1> reactions;
-};
-
-// The main functiona
+// The Main function
 
 int main() {
     statemachine sm;
     sm.initiate();
-    sm.process_event(event_Inner1_Inner2());
-    sm.process_event(event_Inner2_Inner3());
-    sm.process_event(event_Inner3_Inner1());
-
+    sm.process_event(event_MoveToSecondState());
+    sm.process_event(event_CheckSMVariable());
     return 0;
 }
