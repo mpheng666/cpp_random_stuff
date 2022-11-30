@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mpheng/cpp_random_stuff/asio_test/daytime_example/sync_daytime_client.cpp
+boost/array.hpp
+-
+boost/asio.hpp
+-
+iostream
+-
+

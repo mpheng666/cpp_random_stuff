@@ -1,0 +1,4 @@
+/home/mpheng/cpp_random_stuff/asio_test/daytime_example/build/CMakeFiles/rebuild_cache.dir
+/home/mpheng/cpp_random_stuff/asio_test/daytime_example/build/CMakeFiles/edit_cache.dir
+/home/mpheng/cpp_random_stuff/asio_test/daytime_example/build/CMakeFiles/daytime_sync_client.dir
+/home/mpheng/cpp_random_stuff/asio_test/daytime_example/build/CMakeFiles/daytime_sync_server.dir

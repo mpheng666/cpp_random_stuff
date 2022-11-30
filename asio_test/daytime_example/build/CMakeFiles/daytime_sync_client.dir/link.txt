@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/daytime_sync_client.dir/sync_daytime_client.cpp.o  -o daytime_sync_client  -lpthread 

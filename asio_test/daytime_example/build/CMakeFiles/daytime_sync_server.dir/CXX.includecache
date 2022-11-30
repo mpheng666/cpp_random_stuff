@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mpheng/cpp_random_stuff/asio_test/daytime_example/sync_daytime_server.cpp
+boost/asio.hpp
+-
+boost/bind.hpp
+-
+boost/enable_shared_from_this.hpp
+-
+boost/shared_ptr.hpp
+-
+ctime
+-
+iostream
+-
+string
+-
+
