@@ -1,189 +1,187 @@
 {
-    "MouseData": {
-        "ControlPeriod": 5e-05,
-        "Wheel": {
-            "EncCountPerMM": 24,
-            "TrackWidthMM": 33,
-            "EncCountSPerVolt": 250,
-            "Left": {
-                "P": 0.05,
-                "I": 0,
-                "D": 0.03,
-                "FF": 0,
-                "FFD": 6e-05,
-                "MaxIError": 51200
-            },
-            "Right": {
-                "P": 0.05,
-                "I": 0,
-                "D": 0.03,
-                "FF": 0,
-                "FFD": 6e-05,
-                "MaxIError": 51200
-            }
-        },
-        "Gyro": {
-            "P": 0.2,
-            "I": 0.002,
-            "D": 0.08,
-            "Zero": 0,
-            "MaxIError": 500
-        },
-        "Park": {
-            "Velocity": {
-                "P": 0.0008,
-                "I": 0,
-                "D": 0,
-                "FF": 5e-05,
-                "FFD": 0,
-                "MaxIError": 0,
-                "SetPoint": 100,
-                "Acceleration": 5000,
-                "Sensor": 6300
-            },
-            "Sensor": 5000,
-            "SensorL": 3100,
-            "SensorR": 3100,
-            "Left": {
-                "P": 850,
-                "D": 80.39,
-                "FF": 0
-            },
-            "Right": {
-                "P": 850,
-                "D": 80.39,
-                "FF": 0
-            }
-        },
-        "Maze": {
-            "CellCount": 32,
-            "CellLengthMM": 90
-        },
-        "WinningReceipe": {
-            "newpid": {
-                "P": 0.02,
-                "I": 0,
-                "D": 2,
-                "FF": 0,
-                "FFD": 0,
-                "FFD2": 0,
-                "MaxIError": 100
-            },
-            "con_ang": {
-                "kp": 0.055,
-                "kd": 0.09,
-                "ki": 0,
-                "kff": 0.01,
-                "kffd": 100,
-                "MaxIError": 30
-            },
-            "con_spd": {
-                "kp": 0.025,
-                "kd": 0,
-                "ki": 0,
-                "kff": 0.01,
-                "kffd": 300,
-                "MaxIError": 30
-            },
-            "con_wall": {
-                "kp": 0.01,
-                "kd": 0.005,
-                "ki": 0
-            },
-            "con_pos_r": {
-                "kp": 0.01,
-                "kd": 0.1,
-                "ki": 0,
-                "kff": 0,
-                "kffd": 0,
-                "MaxIError": 10
-            },
-            "con_pos_l": {
-                "kp": 0.01,
-                "kd": 0.1,
-                "ki": 0,
-                "kff": 0,
-                "kffd": 0,
-                "MaxIError": 10
-            },
-            "search_ang": {
-                "kp": 0.055,
-                "kd": 0.9,
-                "ki": 0,
-                "kff": 0,
-                "kffd": 100,
-                "MaxIError": 30
-            },
-            "search_spd": {
-                "kp": 0.01,
-                "kd": 0,
-                "ki": 0,
-                "kff": 0,
-                "kffd": 300,
-                "MaxIError": 30
-            }
-        },
-        "SpotTurn": {
-            "Acceleration": 12000,
-            "MaxOmega": 900,
-            "P": 0.09,
+    "ControlPeriod": 5e-05,
+    "Wheel": {
+        "EncCountPerMM": 24,
+        "TrackWidthMM": 33,
+        "EncCountSPerVolt": 250,
+        "Left": {
+            "P": 0.05,
             "I": 0,
-            "D": 0.09,
-            "FFD": 0.001,
-            "Angle180": 148,
-            "AngleR90": 74,
-            "AngleL90": 74,
-            "MaxIError": 0
+            "D": 0.03,
+            "FF": 0,
+            "FFD": 6e-05,
+            "MaxIError": 51200
         },
-        "SearchExplore": {
-            "L90_Passing": 16,
-            "R90_Passing": 17,
-            "L90_Leading": 18,
-            "R90_Leading": 18
-        },
-        "CurveTurn": {
-            "FrontWallCompensation": 1550,
-            "Velocity": {
-                "P": 0.0008,
-                "I": 0,
-                "D": 0,
-                "FF": 5e-05,
-                "FFD": 0,
-                "MaxIError": 0,
-                "SetPoint": 330,
-                "Acceleration": 10000
-            },
-            "Angle": {
-                "ZeroCoefficient": 0,
-                "Acceleration": 18000,
-                "MaxOmega": 600,
-                "P": 0.08,
-                "I": 0,
-                "D": 0.04,
-                "FF": 0,
-                "FFD": 0.0006,
-                "MaxIError": 0,
-                "Left90": 74,
-                "Right90": 74
-            }
-        },
-        "Wall": {
-            "BrakeToGyroAngle": -0.0001
-        },
-        "Goal": {
-            "GoalX": 0,
-            "GoalY": 0,
-            "Goal_Depth": 0,
-            "SubGoalX": 0,
-            "SubGoalY": 0
-        },
-        "AlgorithmSelect": {
-            "SearchToGoal": 0,
-            "SearchToHome": 0,
-            "SearchToHomeAfterDash": 0,
-            "SearchToSubGoal": 0,
-            "HangOutsideGoal": 0,
-            "ExhaustiveSearch": 0
+        "Right": {
+            "P": 0.05,
+            "I": 0,
+            "D": 0.03,
+            "FF": 0,
+            "FFD": 6e-05,
+            "MaxIError": 51200
         }
+    },
+    "Gyro": {
+        "P": 0.2,
+        "I": 0.002,
+        "D": 0.08,
+        "Zero": 0,
+        "MaxIError": 500
+    },
+    "Park": {
+        "Velocity": {
+            "P": 0.0008,
+            "I": 0,
+            "D": 0,
+            "FF": 5e-05,
+            "FFD": 0,
+            "MaxIError": 0,
+            "SetPoint": 100,
+            "Acceleration": 5000,
+            "Sensor": 6300
+        },
+        "Sensor": 5000,
+        "SensorL": 3100,
+        "SensorR": 3100,
+        "Left": {
+            "P": 850,
+            "D": 80.39,
+            "FF": 0
+        },
+        "Right": {
+            "P": 850,
+            "D": 80.39,
+            "FF": 0
+        }
+    },
+    "Maze": {
+        "CellCount": 32,
+        "CellLengthMM": 90
+    },
+    "WinningReceipe": {
+        "newpid": {
+            "P": 0.02,
+            "I": 0,
+            "D": 2,
+            "FF": 0,
+            "FFD": 0,
+            "FFD2": 0,
+            "MaxIError": 100
+        },
+        "con_ang": {
+            "kp": 0.055,
+            "kd": 0.09,
+            "ki": 0,
+            "kff": 0.01,
+            "kffd": 100,
+            "MaxIError": 30
+        },
+        "con_spd": {
+            "kp": 0.025,
+            "kd": 0,
+            "ki": 0,
+            "kff": 0.01,
+            "kffd": 300,
+            "MaxIError": 30
+        },
+        "con_wall": {
+            "kp": 0.01,
+            "kd": 0.005,
+            "ki": 0
+        },
+        "con_pos_r": {
+            "kp": 0.01,
+            "kd": 0.1,
+            "ki": 0,
+            "kff": 0,
+            "kffd": 0,
+            "MaxIError": 10
+        },
+        "con_pos_l": {
+            "kp": 0.01,
+            "kd": 0.1,
+            "ki": 0,
+            "kff": 0,
+            "kffd": 0,
+            "MaxIError": 10
+        },
+        "search_ang": {
+            "kp": 0.055,
+            "kd": 0.9,
+            "ki": 0,
+            "kff": 0,
+            "kffd": 100,
+            "MaxIError": 30
+        },
+        "search_spd": {
+            "kp": 0.01,
+            "kd": 0,
+            "ki": 0,
+            "kff": 0,
+            "kffd": 300,
+            "MaxIError": 30
+        }
+    },
+    "SpotTurn": {
+        "Acceleration": 12000,
+        "MaxOmega": 900,
+        "P": 0.09,
+        "I": 0,
+        "D": 0.09,
+        "FFD": 0.001,
+        "Angle180": 148,
+        "AngleR90": 74,
+        "AngleL90": 74,
+        "MaxIError": 0
+    },
+    "SearchExplore": {
+        "L90_Passing": 16,
+        "R90_Passing": 17,
+        "L90_Leading": 18,
+        "R90_Leading": 18
+    },
+    "CurveTurn": {
+        "FrontWallCompensation": 1550,
+        "Velocity": {
+            "P": 0.0008,
+            "I": 0,
+            "D": 0,
+            "FF": 5e-05,
+            "FFD": 0,
+            "MaxIError": 0,
+            "SetPoint": 330,
+            "Acceleration": 10000
+        },
+        "Angle": {
+            "ZeroCoefficient": 0,
+            "Acceleration": 18000,
+            "MaxOmega": 600,
+            "P": 0.08,
+            "I": 0,
+            "D": 0.04,
+            "FF": 0,
+            "FFD": 0.0006,
+            "MaxIError": 0,
+            "Left90": 74,
+            "Right90": 74
+        }
+    },
+    "Wall": {
+        "BrakeToGyroAngle": -0.0001
+    },
+    "Goal": {
+        "GoalX": 0,
+        "GoalY": 0,
+        "Goal_Depth": 0,
+        "SubGoalX": 0,
+        "SubGoalY": 0
+    },
+    "AlgorithmSelect": {
+        "SearchToGoal": 0,
+        "SearchToHome": 0,
+        "SearchToHomeAfterDash": 0,
+        "SearchToSubGoal": 0,
+        "HangOutsideGoal": 0,
+        "ExhaustiveSearch": 0
     }
 }

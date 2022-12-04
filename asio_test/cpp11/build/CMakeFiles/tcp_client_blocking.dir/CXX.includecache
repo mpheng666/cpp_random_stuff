@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mpheng/cpp_random_stuff/asio_test/cpp11/src/tcp_echo_client_blocking.cpp
+boost/asio.hpp
+-
+cstdlib
+-
+cstring
+-
+iostream
+-
+

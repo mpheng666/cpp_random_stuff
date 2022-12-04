@@ -5,15 +5,14 @@
 using json = nlohmann::json;
 using ordered_json = nlohmann::ordered_json;
 
-void preOrderTraverse(ordered_json OJSData)
-{
+void preOrderTraverse(const ordered_json &OJSData) {
     if (OJSData.empty()) {
         return;
     }
 
     for (auto it = OJSData.begin(), end = OJSData.end(); it != end; ++it) {
         if (it.value().is_object()) {
-            std::cout << it.key() << "\n";
+            std::cout << it.key().c_str() << "\n";
             preOrderTraverse(it.value());
         } else {
             std::cout << it.key() << " : " << it.value() << "\n";
