@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++17 -pthread   CMakeFiles/websocket-server-sync.dir/websocket_server_sync.cpp.o  -o websocket-server-sync -lpthread 

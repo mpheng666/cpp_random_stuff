@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mpheng/workspace/dev_workspace/cpp_random_stuff/beast_websocket/src/websocket/server/sync/websocket_server_sync.cpp
+boost/beast/core.hpp
+-
+boost/beast/websocket.hpp
+-
+boost/asio/ip/tcp.hpp
+-
+cstdlib
+-
+functional
+-
+iostream
+-
+string
+-
+thread
+-
+
