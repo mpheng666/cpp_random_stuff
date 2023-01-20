@@ -7,17 +7,39 @@
 # Official repository: https://github.com/boostorg/beast
 #
 
-GroupSources(include/boost/beast beast)
-GroupSources(example/websocket/server/async "/")
+# GroupSources(include/boost/beast beast)
+# GroupSources(example/websocket/server/async "/")
 
-add_executable (websocket-server-async
-    ${BOOST_BEAST_FILES}
-    Jamfile
-    websocket_server_async.cpp
-)
+# add_executable (websocket-server-async
+#     ${BOOST_BEAST_FILES}
+#     Jamfile
+#     websocket_server_async.cpp
+# )
 
-target_link_libraries(websocket-server-async
-    lib-asio
-    lib-beast)
+# target_link_libraries(websocket-server-async
+#     lib-asio
+#     lib-beast)
 
-set_property(TARGET websocket-server-async PROPERTY FOLDER "example-websocket-server")
+# set_property(TARGET websocket-server-async PROPERTY FOLDER "example-websocket-server")
+
+cmake_minimum_required(VERSION 3.5)
+project(websocket-server-async)
+
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
+
+find_package(Boost REQUIRED)
+find_package(Threads REQUIRED)
+include_directories( include ${Boost_INCLUDE_DIRS} )
+
+add_executable(${PROJECT_NAME} websocket_server_async.cpp)
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} PRIVATE Threads::Threads)
+
+
